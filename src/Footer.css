@@ -2,25 +2,136 @@
 
 .footer-container {
   width: 100%;
-  padding: 2rem 0;
-  background-color: transparent;
-  margin-top: auto; /* Garante que ele fique na parte inferior */
+  padding: 3rem 0 2rem;
+  margin-top: auto; /* Empurra o footer para baixo na tela */
+  border-top: 1px solid rgba(255, 255, 255, 0.05); /* Linha divisória sutil Premium */
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent); /* Sombra saindo do fundo da tela */
 }
 
-.footer-icons {
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+  flex-wrap: wrap; /* Para telas menores */
+  gap: 2rem;
+}
+
+/* --- Redes Sociais --- */
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.icon-link {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 3.5rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%; /* Bolinhas para as redes sociais (Fácil toque no mobile) */
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.5rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
 }
 
-.icon-link svg {
-  font-size: 2rem; 
-  color: #a0a0a0; /* Cor mais sutil como na imagem */
-  transition: color 0.3s ease, transform 0.3s ease;
+.icon-link:hover {
+  color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-4px) scale(1.1);
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
-.icon-link:hover svg {
-  color: #ff8c00; /* Laranja no hover */
-  transform: scale(1.15);
+/* Efeito de cor na marca de cada rede (opcional, ou manter tudo branco no hover) */
+.icon-link[aria-label="X (Twitter)"]:hover { color: #ffffff; }
+.icon-link[aria-label="Instagram"]:hover { color: #E1306C; }
+.icon-link[aria-label="YouTube"]:hover { color: #FF0000; }
+
+/* --- WhatsApp Destaque --- */
+.whatsapp-highlight {
+  /* Centraliza no mobile, joga pra direita no desktop */
+  display: flex;
+}
+
+.whatsapp-button {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(37, 211, 102, 0.1); /* Fundo verde escuro sutil */
+  border: 1px solid rgba(37, 211, 102, 0.3);
+  padding: 0.8rem 1.5rem;
+  border-radius: var(--border-radius-ui); /* Bento Box de 16px */
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  box-shadow: 0 4px 15px -4px rgba(0, 0, 0, 0.5);
+}
+
+.whatsapp-icon {
+  font-size: 2.2rem;
+  color: #25D366; /* Verde Oficial do WhatsApp */
+}
+
+.whatsapp-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.whatsapp-label {
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 0.1rem;
+}
+
+.whatsapp-number {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.whatsapp-button:hover {
+  background: rgba(37, 211, 102, 0.2); /* Acende o botão */
+  border-color: rgba(37, 211, 102, 0.6);
+  transform: translateY(-4px) scale(1.02);
+  /* Glow Verde Premium */
+  box-shadow: 0 12px 30px -8px rgba(37, 211, 102, 0.4), 
+              0 0 20px rgba(37, 211, 102, 0.2),
+              inset 0 1px 0 rgba(255, 255, 255, 0.2); 
+}
+
+/* Responsividade (Telas Menores) */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    justify-content: center;
+    gap: 3rem;
+  }
+  
+  .social-links {
+    order: 2; /* Redes sociais vão para baixo no celular */
+  }
+
+  .whatsapp-highlight {
+    order: 1; /* WhatsApp fica acima no celular para acesso rápido */
+    width: 100%;
+  }
+
+  .whatsapp-button {
+    width: 100%;
+    justify-content: center;
+    padding: 1.2rem;
+  }
 }

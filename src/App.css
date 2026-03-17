@@ -68,3 +68,11 @@ button:focus-visible {
   display: flex;
   flex-direction: column;
 }
+
+.main-content {
+  flex: 1; /* Faz a área principal crescer para empurrar o footer para baixo */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
