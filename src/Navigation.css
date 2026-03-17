@@ -1,0 +1,35 @@
+/* src/Navigation.css */
+
+.navigation-menu {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem; /* Espaço entre os botões */
+  margin-top: 2.5rem; /* Espaço entre o Header e o menu */
+}
+
+.nav-button {
+  font-family: 'Roboto', sans-serif;
+  font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(38, 38, 38, 0.5); /* Fundo sutilmente transparente */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px; /* Bordas totalmente arredondadas */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra suave para profundidade */
+}
+
+.nav-button:hover {
+  color: #FFFFFF;
+  background-color: rgba(50, 50, 50, 0.8);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-3px) scale(1.03); /* Leve elevação e zoom */
+  box-shadow: 0 8px 25px rgba(0, 255, 255, 0.2), 0 0 10px rgba(0, 255, 255, 0.1); /* Efeito "glow" ciano */
+}
+
+.nav-button:active {
+  transform: translateY(0) scale(1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}

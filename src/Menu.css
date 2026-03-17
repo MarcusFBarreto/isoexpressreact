@@ -1,0 +1,43 @@
+/* src/Menu.css */
+
+.main-menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem; /* Aumentar um pouco o espaço para o brilho respirar */
+  padding: 1.5rem 1rem;
+  width: 100%;
+}
+
+.menu-button {
+  position: relative; /* Necessário para o posicionamento do brilho, se usarmos pseudo-elementos no futuro */
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+  color: #E0E0E0;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  /* O efeito começa aqui: uma sombra escura para profundidade e uma sombra clara para o brilho */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4), /* Sombra escura de profundidade */
+              0 0 15px rgba(200, 200, 255, 0.15); /* << O BRILHO SUTIL */
+}
+
+.menu-button:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-3px); /* Um pouco mais de elevação */
+  color: #FFFFFF;
+  /* Intensificamos o efeito no hover */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5), /* Sombra mais forte */
+              0 0 25px rgba(200, 200, 255, 0.3); /* << O BRILHO MAIS INTENSO */
+}
+
+.menu-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3), /* Sombra de clique */
+              0 0 10px rgba(200, 200, 255, 0.1); /* Brilho reduzido no clique */
+}

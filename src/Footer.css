@@ -1,0 +1,26 @@
+/* src/Footer.css */
+
+.footer-container {
+  width: 100%;
+  padding: 2rem 0;
+  background-color: transparent;
+  margin-top: auto; /* Garante que ele fique na parte inferior */
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3.5rem;
+}
+
+.icon-link svg {
+  font-size: 2rem; 
+  color: #a0a0a0; /* Cor mais sutil como na imagem */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.icon-link:hover svg {
+  color: #ff8c00; /* Laranja no hover */
+  transform: scale(1.15);
+}
