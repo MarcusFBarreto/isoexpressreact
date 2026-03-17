@@ -25,9 +25,15 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  /* place-items: center; Removemos isso para que não fique no centro da tela e possamos alinhar pelo topo e esquerda como pedido */
+  justify-content: flex-start;
+  align-items: flex-start;
   min-width: 320px;
   min-height: 100vh;
+}
+
+#root {
+  width: 100%; /* Faz com que o App ocupe toda a largura */
 }
 
 h1 {

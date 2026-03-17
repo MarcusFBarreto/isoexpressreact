@@ -4,40 +4,49 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1.5rem; /* Aumentar um pouco o espaço para o brilho respirar */
-  padding: 1.5rem 1rem;
+  gap: 1.5rem; /* Bento Box Flow */
+  padding: 2rem 1rem;
   width: 100%;
+  max-width: 1200px; /* Limita largura em telas grandes (Estética Editorial) */
+  margin: 0 auto;
 }
 
 .menu-button {
-  position: relative; /* Necessário para o posicionamento do brilho, se usarmos pseudo-elementos no futuro */
-  font-family: "Roboto", sans-serif;
-  font-weight: 600;
-  font-size: clamp(0.9rem, 1.2vw, 1.1rem);
-  color: #E0E0E0;
-  background-color: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
-  padding: 0.75rem 1.5rem;
+  position: relative; 
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 500;
+  font-size: clamp(0.95rem, 1.2vw, 1.15rem);
+  letter-spacing: 0.05em; /* Letras mais soltas em botões menores */
+  text-transform: uppercase; /* Look técnico industrial */
+  
+  color: rgba(255, 255, 255, 0.7);
+  background: var(--glass-bg); /* Fundo sutil */
+  backdrop-filter: var(--glass-blur); /* Glassmorfismo Real: Fosco/Blur */
+  -webkit-backdrop-filter: var(--glass-blur);
+  
+  border: 1px solid var(--glass-border);
+  border-radius: var(--border-radius-ui); /* O Formato Bento Box (16px) */
+  padding: 1rem 2rem; /* Mais gordinho e premium */
+  
   cursor: pointer;
-  transition: all 0.3s ease;
-  /* O efeito começa aqui: uma sombra escura para profundidade e uma sombra clara para o brilho */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4), /* Sombra escura de profundidade */
-              0 0 15px rgba(200, 200, 255, 0.15); /* << O BRILHO SUTIL */
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); /* Animação hiper-fluida (mola/spring) */
+  
+  box-shadow: 0 4px 24px -6px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1); /* Sombra difusa e luz interna */
 }
 
 .menu-button:hover {
-  background-color: rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.5);
-  transform: translateY(-3px); /* Um pouco mais de elevação */
+  background-color: rgba(255, 255, 255, 0.08); /* Clareia levemente o vidro fosco */
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-4px) scale(1.02); /* Elevação sutil e crescimento */
   color: #FFFFFF;
-  /* Intensificamos o efeito no hover */
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5), /* Sombra mais forte */
-              0 0 25px rgba(200, 200, 255, 0.3); /* << O BRILHO MAIS INTENSO */
+  
+  /* Substituí o glow ciano por um Laranja Sutil (Mantendo a identidade da marca unida) */
+  box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.6), 
+              0 0 20px var(--accent-glow),
+              inset 0 1px 0 rgba(255, 255, 255, 0.15); 
 }
 
 .menu-button:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3), /* Sombra de clique */
-              0 0 10px rgba(200, 200, 255, 0.1); /* Brilho reduzido no clique */
+  transform: translateY(1px) scale(0.98); /* Simula o peso real do toque */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5), inset 0 2px 4px rgba(0, 0, 0, 0.2);
 }

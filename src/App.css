@@ -1,28 +1,44 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;600;700&display=swap');
 /* src/App.css */
 
 :root {
-  font-family: "Roboto", sans-serif, system-ui, Avenir, Helvetica, Arial;
+  /* Substituindo Roboto por Space Grotesk (Títulos/Branding) e Inter (Textos) */
+  font-family: "Inter", sans-serif, system-ui, Avenir, Helvetica, Arial;
   line-height: 1.5;
   font-weight: 300;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #121212; /* Maintained from previous version */
+  
+  /* Textura de fundo hiper-premium (Noise/Mesh gradient sutil) */
+  background-color: #0a0a0a; /* Mais escuro que #121212 para maior contraste */
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(30, 30, 40, 0.5) 0%, transparent 60%),
+    radial-gradient(circle at 80% 80%, rgba(20, 20, 25, 0.4) 0%, transparent 50%);
+  background-attachment: fixed;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* Variáveis de Tema (Bento Box System 2026) */
+  --border-radius-ui: 16px; /* Borda padrão hiper-realista */
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-blur: blur(16px);
+  --accent-orange: #FF6B00; /* Laranja mais vibrante e industrial */
+  --accent-glow: rgba(255, 107, 0, 0.15); /* Glow combinando com o laranja */
 }
 
 a {
-  font-weight: 500; /* Increased from 400 for better visibility */
-  color: #646cff;
+  font-weight: 500; 
+  color: var(--accent-orange);
   text-decoration: inherit;
+  transition: color 0.3s ease;
 }
 a:hover {
-  color: #535bf2;
+  color: #ff8c33;
 }
 
 body {
@@ -34,21 +50,21 @@ button {
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
-  font-family: inherit;
+  font-family: "Space Grotesk", sans-serif; /* Botões ganham aspecto mais técnico */
   background-color: #1a1a1a;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1); /* Animação orgânica (spring-like) */
 }
 button:hover {
-  border-color: #646cff;
+  border-color: var(--accent-orange);
 }
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: 4px auto var(--accent-orange);
 }
 
 .App {
-  /* The original App.css had 'text-align: center'.
-     Our header is text-align: left, so we'll manage alignment
-     on a component-by-component basis. */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }

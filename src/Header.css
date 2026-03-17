@@ -1,15 +1,19 @@
 .header {
-  text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem; /* Respiro maior */
+  padding-left: 5%; 
+  padding-top: 3rem; /* Margem superior mais generosa */
 }
 
 .header h1 {
-  font-size: 4rem;
-  font-weight: bold;
+  font-family: "Space Grotesk", sans-serif; /* A Nova Fonte (Tech/Industrial/Premium) */
+  font-size: clamp(3rem, 6vw, 5rem); /* Tipografia fluida e muito maior */
+  font-weight: 700;
   margin: 0;
   display: flex;
-  align-items: baseline; /* Align to the baseline of the text */
-  justify-content: center;
+  align-items: baseline;
+  justify-content: flex-start; 
+  flex-wrap: wrap; 
+  letter-spacing: -0.03em; /* Kerning negativo para fontes grandes (Moderna) */
 }
 
 .iso {
@@ -18,18 +22,20 @@
 }
 
 .express {
-  color: orange;
-  font-weight: 300;
+  color: var(--accent-orange);
+  font-weight: 700; /* Mais contraste de peso entre "Iso" e "Express" */
 }
 
 .subtitle {
-  font-family: "Roboto", sans-serif;
-  font-size: 1.5rem;
-  margin-left: 1rem;
-  color: #fff;
-  font-weight: 100;
+  font-family: "Inter", sans-serif; /* Textos de apoio limpos */
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
+  margin-left: 1.5rem; /* Afastou um pouco mais */
+  color: rgba(255, 255, 255, 0.6); /* Cinza elegante, em vez de branco chapado */
+  font-weight: 300;
+  letter-spacing: 0;
 }
 
 .bold-subtitle {
   font-weight: 600;
+  color: white; /* Dá destaque para "EPS" */
 }

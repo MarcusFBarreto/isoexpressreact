@@ -3,33 +3,43 @@
 .navigation-menu {
   display: flex;
   justify-content: center;
-  gap: 1.5rem; /* Espaço entre os botões */
-  margin-top: 2.5rem; /* Espaço entre o Header e o menu */
+  gap: 1.5rem; /* Espaço Bento Box Unificado */
+  margin-top: 3.5rem; /* Respiro ainda maior abaixo do menu */
 }
 
 .nav-button {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   font-size: clamp(0.9rem, 1.2vw, 1.1rem);
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.8);
-  background-color: rgba(38, 38, 38, 0.5); /* Fundo sutilmente transparente */
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 0.75rem 1.5rem;
-  border-radius: 50px; /* Bordas totalmente arredondadas */
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7); /* Mesma estética do Menu */
+  
+  /* Sistema Glassmorfismo Unificado */
+  background: var(--glass-bg); 
+  backdrop-filter: var(--glass-blur); 
+  -webkit-backdrop-filter: var(--glass-blur);
+  
+  border: 1px solid var(--glass-border);
+  padding: 1rem 2.5rem; /* Generoso */
+  border-radius: var(--border-radius-ui); /* Substituí 50px por 16px (Bento Box), unificando design */
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra suave para profundidade */
+  
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 15px -4px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05); /* Sombra elegante */
 }
 
 .nav-button:hover {
   color: #FFFFFF;
-  background-color: rgba(50, 50, 50, 0.8);
-  border-color: rgba(255, 255, 255, 0.5);
-  transform: translateY(-3px) scale(1.03); /* Leve elevação e zoom */
-  box-shadow: 0 8px 25px rgba(0, 255, 255, 0.2), 0 0 10px rgba(0, 255, 255, 0.1); /* Efeito "glow" ciano */
+  background-color: rgba(255, 255, 255, 0.08); /* Efeito fosco hover */
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-4px) scale(1.02); /* Animação hiper-fluida */
+  
+  /* Glow laranja para se conectar com "Express", tirando a aura de "gaming" do azul-ciano */
+  box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.6), 
+              0 0 20px var(--accent-glow),
+              inset 0 1px 0 rgba(255, 255, 255, 0.15); 
 }
 
 .nav-button:active {
-  transform: translateY(0) scale(1);
+  transform: translateY(1px) scale(0.98); 
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
